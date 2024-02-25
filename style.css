@@ -93,13 +93,29 @@ body::-webkit-scrollbar {
 
 .nav-menu li a {
     transition: color 0.5s, border-bottom 4s;
+    position: relative;
+    text-decoration: none;
+    color: rgb(205, 202, 202);
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.nav-menu li a:hover {
-    color: lightgrey;
-    border-bottom: 1px solid black;
+.nav-menu li a::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
 }
 
+.nav-menu li a:hover::before
+{
+    width: 100%;
+}
 
 /* Name and Social Icons*/
 
